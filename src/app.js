@@ -1,11 +1,10 @@
 import express from 'express';
-import carsRoutes from './routes/cars.routes.js';
-import driversRoutes from './routes/drivers.routes.js';
+import {indexRouter} from './routes/index.routes.js'
 
 const app = express();
 
 app.use(express.json());
-app.use('/api', carsRoutes);
-app.use('/api', driversRoutes);
+app.use(express.urlencoded({ extended: true }));
+app.use('/api', indexRouter())
 
 export default app;

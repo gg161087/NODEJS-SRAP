@@ -9,17 +9,17 @@ DB_PASSWORD=password
 
 Car:
 {
-    "model":
-    "factory":
-    "color":
-    "patent":
+    "model": "Corolla",
+    "factory": "Toyota",
+    "color": "Negro",
+    "patent": "AB123BC"
 }
-Driver:
+driver:
 {
-    "name":
-    "last_name":
-    "dni":
-    "email":
-    "age":
-    "carId":
+  "name": "Cosme",
+  "last_name": "Fulanito",
+  "dni": 45679832,
+  "email": "cosme.fulanito@ejemplo.com",
+  "age": 25,
+  "carId": 2
 }

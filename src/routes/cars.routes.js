@@ -3,12 +3,12 @@ import {getCars, getCar , createCar, updateCar, deleteCar, getCarDrivers} from '
 
 const router = Router();
 
-router.get('/cars', getCars);
-router.get('/cars/:id', getCar);
-router.post('/cars', createCar);
-router.put('/cars/:id', updateCar);
-router.delete('/cars/:id', deleteCar);
+router.get('/', getCars);
+router.get('/:id', getCar);
+router.post('/', createCar);
+router.put('/:id', updateCar);
+router.delete('/:id', deleteCar);
 
-router.get('/cars/:id/drivers', getCarDrivers);
+router.get('/:id/drivers', getCarDrivers);
 
 export default router;
