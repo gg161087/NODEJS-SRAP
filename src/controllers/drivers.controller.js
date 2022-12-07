@@ -44,7 +44,6 @@ const createDriver = async (req, res) => {
                 id: driver.id
             }
         })
-        res.sendStatus(204)
     } catch (error) {
         return res.status(500).json({message: error.message})
     }

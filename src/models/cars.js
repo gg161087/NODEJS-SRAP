@@ -50,5 +50,5 @@ Cars.hasMany(Drivers, {
 
 Drivers.belongsTo(Cars, {
   foreingKey: 'carId',
-  targetKey: 'id'
+  targetId: 'id'
 });

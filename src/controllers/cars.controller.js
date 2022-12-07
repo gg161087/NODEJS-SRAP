@@ -1,5 +1,6 @@
 import {Cars} from '../models/cars.js'
 import {Errors} from '../const/errors.js'
+import {Drivers} from '../models/drivers.js';
 
 const getCars = async (req, res) => {
     try {
@@ -45,8 +46,7 @@ const createCar = async (req, res) => {
                 id: car.id,
                 message: "Creado Correctamente"
             }
-        })
-        res.sendStatus(204)
+        })        
     } catch (error) {
         return res.status(500).json({message: error.message})
     }
@@ -91,4 +91,11 @@ const deleteCar = async (req, res, next) => {
     }   
 };
 
-export {getCars, getCar , createCar, updateCar, deleteCar};
+const getCarDrivers = async (req, res) => {
+    const drivers = await Drivers.findAll({
+        where: {carId: req.params.id}
+    })
+    res.json(drivers);
+}
+
+export {getCars, getCar , createCar, updateCar, deleteCar, getCarDrivers};
