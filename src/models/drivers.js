@@ -1,7 +1,7 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../database/database.js';
 
-export const Patients = sequelize.define('patients',{
+export const Drivers = sequelize.define('drivers',{
   id: {
     type: DataTypes.BIGINT,
     autoIncrement: true,
@@ -27,10 +27,6 @@ export const Patients = sequelize.define('patients',{
   age: {
     type: DataTypes.INTEGER,
     allowNull: false
-  },
-  social_work: {
-    type: DataTypes.STRING,
-    allowNull: true
   },
   createdAt: {
     type: DataTypes.DATE,

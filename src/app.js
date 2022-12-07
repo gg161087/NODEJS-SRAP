@@ -1,11 +1,11 @@
 import express from 'express';
-import doctorsRoutes from './routes/doctors.routes.js';
-import patientsRoutes from './routes/patients.routes.js';
+import carsRoutes from './routes/cars.routes.js';
+import driversRoutes from './routes/drivers.routes.js';
 
 const app = express();
 
 app.use(express.json());
-app.use('/api', doctorsRoutes);
-app.use('/api', patientsRoutes);
+app.use('/api', carsRoutes);
+app.use('/api', driversRoutes);
 
 export default app;

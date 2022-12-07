@@ -1,32 +1,30 @@
 import {DataTypes} from 'sequelize'
 import {sequelize} from '../database/database.js'
-import {Patients} from './patients.js'
+import {Drivers} from './drivers.js'
 
-export const Doctors = sequelize.define('doctors',{
+export const Cars = sequelize.define('cars',{
   id: {
     type: DataTypes.BIGINT,
     autoIncrement: true,
     primaryKey: true,
     allowNull: false,
   },
-  name: {
+  model: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  last_name: {
+  factory: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
+  color: {
     type: DataTypes.STRING,
-  },
-  specialty: {
-    type: DataTypes.STRING,
-  },
-  enrollment: {
-    type: DataTypes.INTEGER,
     allowNull: false,
   },
+  patent: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },  
   createdAt: {
     type: DataTypes.DATE,
     field: 'created_at',
@@ -45,12 +43,12 @@ export const Doctors = sequelize.define('doctors',{
   }  
 });
 
-Doctors.hasMany(Patients, {
-  foreingKey: 'doctorId',
+Cars.hasMany(Drivers, {
+  foreingKey: 'CarId',
   sourceKey: 'id'
-})
+});
 
-Patients.belongsTo(Doctors, {
-  foreingKey: 'doctorId',
+Drivers.belongsTo(Cars, {
+  foreingKey: 'carId',
   targetKey: 'id'
-})
+});
