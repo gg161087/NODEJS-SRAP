@@ -21,4 +21,5 @@ Driver:
     "dni":
     "email":
     "age":
+    "carId":
 }
